@@ -1,67 +1,61 @@
 import React from 'react';
-import { Text, StyleSheet, View, TouchableHighlight } from 'react-native';
+import { Text, StyleSheet, View, Button } from 'react-native';
 import { Feather, Ionicons, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 import { primaryColor, secondaryColor } from '../../constants/colors';
 
 const GiveDonateScreen = () => {
-  return (<View style={styles.container}>
+  return (
+  <View style={styles.container}>
     <Text style={styles.title}>Submit Your Offering</Text>
-    <View style={styles.separator} lightColor="#dd7a58" darkColor="rgba(255,255,255,0.1)" />
     <View style={styles.iconContainer}>
-    <TouchableHighlight
-activeOpacity={0.6}
-underlayColor="#dd7a58"
->
-    <FontAwesome5 name="money-check" size={30} color={primaryColor} />
-    </TouchableHighlight>
-    <Text>Offering</Text>
-    <TouchableHighlight
-activeOpacity={0.6}
-underlayColor="#dd7a58"
->
-    <Ionicons name="leaf-outline" size={36} color={primaryColor} />
-    </TouchableHighlight>
-    <Text>Tithe</Text>
-    <TouchableHighlight
-activeOpacity={0.6}
-underlayColor="#dd7a58"
->
+      <View style={styles.iconandTextContainer_}>
 
-    <FontAwesome5 name="seedling" size={36} color={primaryColor} />
-    </TouchableHighlight>
-    <Text>Seed</Text>
-    
-</View>
-<View style={styles.iconContainer}>
-<TouchableHighlight
-activeOpacity={0.6}
-underlayColor="#dd7a58"
->
-    <Feather name="feather" size={36} color={primaryColor} />
-    </TouchableHighlight>
-    <Text>Mission Work</Text>
-    <TouchableHighlight
-activeOpacity={0.6}
-underlayColor="#dd7a58"
->
-    <MaterialCommunityIcons name="home-heart" size={36} color={primaryColor} />
-    </TouchableHighlight>
-    <Text>Prophetic Offering</Text>
-    <TouchableHighlight
-activeOpacity={0.6}
-underlayColor="#dd7a58"
->
-    <FontAwesome5 name="money-check-alt" size={36} color={primaryColor} />
-    </TouchableHighlight>
-    <Text>Building Offering</Text>
+          <FontAwesome5 name="money-check" size={40} color={primaryColor} />
+        <Text>Offering</Text>
+      </View>
+      <View style={styles.iconandTextContainer_}>
 
-</View>
+          <Ionicons name="leaf-outline" size={40} color={primaryColor} />
+
+        <Text>Tithe</Text>
+      </View>
+      <View style={styles.iconandTextContainer_}>
+
     
 
-
+          <FontAwesome5 name="seedling" size={40} color={primaryColor} />
+        <Text>Seed</Text>
+      </View>
 
     </View>
-)
+    <View style={styles.iconContainer}>
+      <View style={styles.iconandTextContainer}>
+
+
+        <Feather name="feather" size={40} color={primaryColor} />
+        <Text>Mission Work</Text>
+      </View>
+      <View style={styles.iconandTextContainer}>
+
+
+        <MaterialCommunityIcons name="home-heart" size={40} color={primaryColor} />
+        <Text>Prophetic Offering</Text>
+      </View>
+      <View style={styles.iconandTextContainer}>
+
+
+
+        <FontAwesome5 name="money-check-alt" size={40} color={primaryColor} />
+        <Text>Building Offering</Text>
+      </View>
+
+    </View>
+
+
+
+
+  </View>
+  )
 };
 
 const styles = StyleSheet.create({
@@ -69,24 +63,28 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#ffffff'
+    
   },
   iconContainer: {
     flex: .3,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10
+    padding: 5
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
+  iconandTextContainer: {
+    marginLeft: 15,
+    marginRight: 15,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  separator: {
-    marginVertical: 7.5,
-    height: 1,
-    width: '66.66%',
-    color:'#dd7a58'
-  },
+  iconandTextContainer_: {
+    marginLeft: 40,
+    marginRight:40,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 });
 
 

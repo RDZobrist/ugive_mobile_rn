@@ -23,11 +23,12 @@ export default App = () => {
   } else {
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName='UGIVE'   screenOptions={{
+      <Tab.Navigator initialRouteName='   '  // three spaces as route name to match route name for home screen 
+        screenOptions={{
         tabBarActiveTintColor: secondaryColor
       }}
      >
-      <Tab.Screen name="Give'Donate" component={GiveDonateScreen} options={{
+      <Tab.Screen name="Give/Donate" component={GiveDonateScreen} options={{
           tabBarIcon: () => <FontAwesome5 name="donate" size={25}  color={primaryColor} />,
         }}   />
       <Tab.Screen name="History"  component={HistoryScreen}  options={{
@@ -40,7 +41,8 @@ export default App = () => {
       <Tab.Screen name="Settings" component={SettingsScreen}  options={{
           tabBarIcon: () => <Octicons name="settings" size={25}  color={primaryColor} />,
         }} />
-      <Tab.Screen name="UGIVE"  options={{
+      <Tab.Screen name="   " //gave three spaces as name, so status bar renders blank white 
+       options={{
       tabBarVisible: false, //like this
       tabBarButton: (props) => null, //this is additional if you want to hide the tab element from the bottom nav
     }} component={HomeScreen} />
