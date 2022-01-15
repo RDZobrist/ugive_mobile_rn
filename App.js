@@ -12,10 +12,15 @@ import ScheduleCounselingScreen from './src/screens/ScheduleCounselingScreen';
 import SupportScreen from './src/screens/SupportScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
 import { primaryColor, secondaryColor } from './constants/colors';
+import useCachedResources from './helpers/useCachedResources';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default App = () => {
+  const isLoadingComplete = useCachedResources();
+  if (!isLoadingComplete) {
+    return null;
+  } else {
   return (
     <NavigationContainer>
       <Tab.Navigator initialRouteName='UGIVE'   screenOptions={{
@@ -43,5 +48,6 @@ export default App = () => {
     </Tab.Navigator>
     </NavigationContainer>  
     );
+  };
 };
    

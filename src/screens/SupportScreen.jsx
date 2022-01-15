@@ -22,7 +22,7 @@ const SupportScreen = () => {
 
     <Ionicons name="md-location-outline" style={styles.icons} size={36} color={primaryColor} />
     
-    <View style={styles.separator} lightColor="lightgray" darkColor="rgba(255,255,255,0.1)" />
+    <View style={styles.separator}  />
 
     <AntDesign name="message1" style={styles.icons} size={36} color={primaryColor} />
     <View style={styles.separator} lightColor="black" darkColor="rgba(255,255,255,0.1)" />
