@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 import { secondaryColor } from '../../constants/colors';
+import ButtonBar from '../components/ButtonBar';
 
 
 export default class HistoryScreen extends Component {
@@ -25,19 +26,26 @@ export default class HistoryScreen extends Component {
     const state = this.state;
     return (
       <View style={styles.container}>
+                <ButtonBar />
+      <View style={styles.tableContainer}>
         <Table style={styles.Table} borderStyle={{borderWidth: 1.33, borderColor: secondaryColor}}>
           <Row data={state.HeadTable} style={styles.HeadStyle} textStyle={styles.TableText}/>
           <Rows data={state.DataTable} textStyle={styles.TableText}/>
         </Table>
+      </View>
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  container: { 
+  container: {
+    height: '100%',
+    width: '100%',
+    backgroundColor: '#fafafa'
+  },
+  tableContainer: { 
     flex: 1,
-    paddingTop: 35,
     paddingLeft:50,
     paddingRight:50,
     backgroundColor: '#ffffff' 
@@ -51,8 +59,6 @@ const styles = StyleSheet.create({
     margin: 5
   },
   Table: {
-    marginTop:'85%',
-    marginBottom:'-10%'
-
+    marginTop: '6.66%'
   }
 });

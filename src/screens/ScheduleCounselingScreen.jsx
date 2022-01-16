@@ -2,10 +2,17 @@ import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 
 const ScheduleCounselingScreen = () => {
-  return <Text style={styles.text}>Schedule Counseling</Text>;
+  return (
+    <View style={styles.contaier}>
+    <Text style={styles.text}>Schedule Counseling</Text>
+  </View>
+  );
 };
 
 const styles = StyleSheet.create({
+  contaier: {
+    backgroundColor: '#fafafa'
+  },
   text: {
     fontSize: 30,
   },

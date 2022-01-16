@@ -2,12 +2,13 @@ import React from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 import { SimpleLineIcons, AntDesign, Feather, Ionicons } from '@expo/vector-icons';
 import { primaryColor, secondaryColor } from '../../constants/colors';
+import ButtonBar from '../components/ButtonBar';
 
 const SupportScreen = () => {
   return (<View style={styles.container}>
     <Text style={styles.title}>We're Always Here if You Need Us</Text>
-    <View style={styles.separator} lightColor="lightgray" darkColor="rgba(255,255,255,0.1)" />
     <Text>Ways to connect with us</Text>
+    <ButtonBar />
     <AntDesign name="phone" size={36} style={styles.icons} color={primaryColor} />
     <View style={styles.separator} lightColor="lightgray" darkColor="rgba(255,255,255,0.1)" />
 
@@ -41,11 +42,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
   },
-  separator: {
-    marginVertical: 7.5,
-    height: 1,
-    width: '66.66%',
-  },
+ 
   icons: {
     marginRight: '77.77%',
     marginTop: 10

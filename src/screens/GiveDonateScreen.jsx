@@ -2,20 +2,21 @@ import React from 'react';
 import { Text, StyleSheet, View, Button } from 'react-native';
 import { Feather, Ionicons, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 import { primaryColor, secondaryColor } from '../../constants/colors';
-
+import ButtonBar from '../components/ButtonBar';
 const GiveDonateScreen = () => {
   return (
   <View style={styles.container}>
     <Text style={styles.title}>Submit Your Offering</Text>
+    <ButtonBar />
     <View style={styles.iconContainer}>
       <View style={styles.iconandTextContainer_}>
 
-          <FontAwesome5 name="money-check" size={40} color={primaryColor} />
+          <FontAwesome5 name="money-check" size={50} color={primaryColor} />
         <Text>Offering</Text>
       </View>
       <View style={styles.iconandTextContainer_}>
 
-          <Ionicons name="leaf-outline" size={40} color={primaryColor} />
+          <Ionicons name="leaf-outline" size={50} color={primaryColor} />
 
         <Text>Tithe</Text>
       </View>
@@ -23,7 +24,7 @@ const GiveDonateScreen = () => {
 
     
 
-          <FontAwesome5 name="seedling" size={40} color={primaryColor} />
+          <FontAwesome5 name="seedling" size={50} color={primaryColor} />
         <Text>Seed</Text>
       </View>
 
@@ -32,20 +33,20 @@ const GiveDonateScreen = () => {
       <View style={styles.iconandTextContainer}>
 
 
-        <Feather name="feather" size={40} color={primaryColor} />
+        <Feather name="feather" size={50} color={primaryColor} />
         <Text>Mission Work</Text>
       </View>
       <View style={styles.iconandTextContainer}>
 
 
-        <MaterialCommunityIcons name="home-heart" size={40} color={primaryColor} />
+        <MaterialCommunityIcons name="home-heart" size={50} color={primaryColor} />
         <Text>Prophetic Offering</Text>
       </View>
       <View style={styles.iconandTextContainer}>
 
 
 
-        <FontAwesome5 name="money-check-alt" size={40} color={primaryColor} />
+        <FontAwesome5 name="money-check-alt" size={50} color={primaryColor} />
         <Text>Building Offering</Text>
       </View>
 
