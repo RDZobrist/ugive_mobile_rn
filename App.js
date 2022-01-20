@@ -16,6 +16,7 @@ import SendMessageScreen_ from './src/screens/DailyBibleVerseScreen';
 
 import { primaryColor, secondaryColor } from './constants/colors';
 import useCachedResources from './helpers/useCachedResources';
+import MakeDonationScreen from './src/screens/MakeDonation';
 
 
 const Tab = createBottomTabNavigator();
@@ -80,6 +81,14 @@ export default App = () => {
         <Tab.Screen 
       name="Instagram Feed" 
       component={InstagramFeedScreen}
+      options={{
+        tabBarVisible: false, 
+        tabBarButton: (props) => null, 
+      }} 
+      />
+       <Tab.Screen 
+      name="Make Donation" 
+      component={MakeDonationScreen}
       options={{
         tabBarVisible: false, 
         tabBarButton: (props) => null, 
