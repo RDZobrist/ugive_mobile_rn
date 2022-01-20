@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { SafeAreaView } from 'react-navigation';
 import { Text, StyleSheet, View, Button, TouchableOpacity, Pressable } from 'react-native';
 import {
   Feather,
@@ -53,6 +54,7 @@ class GiveDonateScreen extends Component {
 
 
     return (
+      <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <Text style={styles.title}>Submit Your Offering</Text>
         <View style={styles.buttonBarContainer}>
@@ -165,6 +167,7 @@ class GiveDonateScreen extends Component {
         null
       }
       </View>
+      </SafeAreaView>
     )
   };
 };

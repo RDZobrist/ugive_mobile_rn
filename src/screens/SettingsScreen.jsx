@@ -2,8 +2,10 @@ import React from 'react';
 import { Text, StyleSheet, View, TouchableOpacity } from 'react-native';
 import { SimpleLineIcons, AntDesign, Feather, Ionicons, FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 import { primaryColor, secondaryColor } from '../../constants/colors';
+import { SafeAreaView } from 'react-navigation';
 const SettingsScreen = props => {
   return (
+    <SafeAreaView style={styles.container}>
     <View style={styles.container}>
       <Text style={styles.text}>Settings</Text>
       <View style={styles.buttonBarContainer}>
@@ -30,6 +32,7 @@ const SettingsScreen = props => {
         </View>
       </View>    
        </View>
+       </SafeAreaView>
   )
 };
   

@@ -1,6 +1,7 @@
 // App.js
 
 import React, { Component } from 'react';
+import { SafeAreaView } from 'react-navigation';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 import { secondaryColor, primaryColor } from '../../constants/colors';
@@ -24,6 +25,7 @@ const HistoryScreen = props => {
   
     const state = this.state;
     return (
+      <SafeAreaView style={styles.container}>
       <View style={styles.container}>
        <View style={styles.buttonBarContainer}>
         <View style={styles.iconContainerButtonBar}>
@@ -55,6 +57,7 @@ const HistoryScreen = props => {
           </Table>
         </View>
       </View>
+      </SafeAreaView>
     )
   }
 

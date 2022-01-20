@@ -1,10 +1,13 @@
 import React from 'react';
 import { Text, StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 const TwitterFeedScreen = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+    <View >
       <Text style={styles.text}>What's happening on Twitter</Text>
     </View>
+    </SafeAreaView>
   )
 };
   

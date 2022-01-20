@@ -1,13 +1,16 @@
 import React from 'react';
 import { Text, StyleSheet, View, Image } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 import {primaryColor, secondaryColor} from '../../constants/colors';
 
 const HomeScreen = () => {
   return(
+    <SafeAreaView style={styles.container}>
   <View style={styles.logoContainer}> 
   <Image source={require('../../assets/icon.png')} style={styles.imageLogo}/>
     <Text style={styles.text}>UGIVE</Text>
   </View>
+  </SafeAreaView>
   )
 };
 
