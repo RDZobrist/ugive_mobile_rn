@@ -5,7 +5,7 @@ import {primaryColor, secondaryColor} from '../../constants/colors';
 
 const HomeScreen = () => {
   return(
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.logoContainer}>
   <View style={styles.logoContainer}> 
   <Image source={require('../../assets/icon.png')} style={styles.imageLogo}/>
     <Text style={styles.text}>UGIVE</Text>
