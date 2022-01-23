@@ -7,27 +7,40 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.1.6",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/bottom-tabs": "^6.0.9",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
     "@react-navigation/stack": "^6.0.11",
+    "@stripe/stripe-react-native": "0.2.2",
+    "axios": "^0.25.0",
+    "body-parser": "^1.19.1",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^14.2.0",
     "expo": "^43.0.0",
     "expo-splash-screen": "~0.13.5",
     "expo-status-bar": "~1.1.0",
     "expo-updates": "~0.10.13",
+    "express": "^4.17.2",
+    "path": "^0.12.7",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
-    "react-native-gesture-handler": "^2.1.1",
+    "react-native-elements": "^3.4.2",
+    "react-native-gesture-handler": "~1.10.2",
     "react-native-paper": "^4.11.2",
-    "react-native-reanimated": "^2.3.1",
+    "react-native-reanimated": "~2.2.0",
     "react-native-safe-area-context": "^3.3.2",
-    "react-native-screens": "^3.10.1",
+    "react-native-screens": "~3.8.0",
+    "react-native-select-dropdown": "^1.7.0",
     "react-native-table-component": "^1.2.1",
+    "react-native-vector-icons": "^9.0.0",
     "react-native-web": "0.17.1",
     "react-navigation": "^4.4.4",
     "react-navigation-stack": "^2.10.4",
+    "stripe": "^8.199.0",
     "uri-scheme": "^1.0.112"
   },
   "devDependencies": {
@@ -35,5 +48,12 @@
   },
   "private": true,
   "name": "ugivemobileapprn",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "pnpm": {
+    "overrides": {
+      "ansi-regex@>2.1.1 <5.0.1": ">=5.0.1",
+      "node-fetch@<2.6.1": ">=2.6.1",
+      "node-fetch@<3.1.1": ">=3.1.1"
+    }
+  }
 }

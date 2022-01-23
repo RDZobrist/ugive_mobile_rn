@@ -2,6 +2,10 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import {  createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {  FontAwesome5, Octicons, Foundation } from '@expo/vector-icons';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StripeProvider } from '@stripe/stripe-react-native';
+
+import { primaryColor, secondaryColor } from './constants/colors';
 
 import GiveDonateScreen from './src/screens/GiveDonateScreen'
 import HomeScreen from "./src/screens/HomeScreen";
@@ -13,8 +17,9 @@ import TwitterFeedScreen from './src/screens/TwitterFeedScreen';
 import InstagramFeedScreen from './src/screens/InstagramFeedScreen';
 import SendMessageScreen from './src/screens/SendMessageScreen';
 import SendMessageScreen_ from './src/screens/DailyBibleVerseScreen';
+import PaymentScreen from './src/screens/StripePaymentFormScreen';
+import stripeApp from './src/screens/StripeApp';
 
-import { primaryColor, secondaryColor } from './constants/colors';
 import useCachedResources from './helpers/useCachedResources';
 import MakeDonationScreen from './src/screens/MakeDonation';
 
@@ -27,6 +32,7 @@ export default App = () => {
     return null;
   } else {
   return (
+    <SafeAreaProvider>
     <NavigationContainer>
       <Tab.Navigator initialRouteName='   '  // three spaces as route name to match route name for home screen 
         screenOptions={{
@@ -94,6 +100,24 @@ export default App = () => {
         tabBarButton: (props) => null, 
       }} 
       />
+    <Tab.Screen 
+      name="Finalize Donation" 
+      component={PaymentScreen}
+      options={{
+        tabBarVisible: false, 
+        tabBarButton: (props) => null, 
+      }} 
+      />
+          <Tab.Screen 
+      name="Finalize DonatioN" 
+      component={stripeApp}
+      options={{
+        tabBarVisible: false, 
+        tabBarButton: (props) => null, 
+      }} 
+      />
+
+
 
       <Tab.Screen 
         name="   " //gave three spaces as name, so status bar renders blank white 
@@ -105,6 +129,7 @@ export default App = () => {
 
     </Tab.Navigator>
     </NavigationContainer>  
+    </SafeAreaProvider>
     );
   };
 };

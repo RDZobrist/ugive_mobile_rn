@@ -301,9 +301,9 @@ PODS:
     - React-perflogger (= 0.64.3)
   - RNCMaskedView (0.1.11):
     - React
-  - RNGestureHandler (2.1.1):
+  - RNGestureHandler (1.10.3):
     - React-Core
-  - RNReanimated (2.3.1):
+  - RNReanimated (2.2.4):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -329,11 +329,23 @@ PODS:
     - React-RCTNetwork
     - React-RCTSettings
     - React-RCTText
+    - React-RCTVibration
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.10.1):
+  - RNScreens (3.8.0):
     - React-Core
     - React-RCTImage
+  - RNVectorIcons (9.0.0):
+    - React-Core
+  - Stripe (21.8.1):
+    - Stripe/Stripe3DS2 (= 21.8.1)
+    - StripeCore (= 21.8.1)
+  - stripe-react-native (0.2.2):
+    - React
+    - Stripe (~> 21.8.1)
+  - Stripe/Stripe3DS2 (21.8.1):
+    - StripeCore (= 21.8.1)
+  - StripeCore (21.8.1)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -385,11 +397,15 @@ DEPENDENCIES:
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
+  - "stripe-react-native (from `../node_modules/@stripe/stripe-react-native`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - Stripe
+    - StripeCore
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -484,6 +500,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
+  stripe-react-native:
+    :path: "../node_modules/@stripe/stripe-react-native"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -532,9 +552,13 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 493d9abb8b23c3f84e19ae221eeba92cadcb70dc
   ReactCommon: 8fea6422328e2fc093e25c9fac67adbcf0f04fb4
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
-  RNGestureHandler: e1ad51d31a580755079d5124d3ab66f0fcaa8311
-  RNReanimated: 7f143675d94978c3555345d5bfa8ed6ae800c5d3
-  RNScreens: 522705f2e5c9d27efb17f24aceb2bf8335bc7b8e
+  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
+  RNReanimated: 024eff8202342abf4b24e11575a16afc441dabfe
+  RNScreens: 6e1ea5787989f92b0671049b808aef64fa1ef98c
+  RNVectorIcons: 4143ba35feebab8fdbe6bc43d1e776b393d47ac8
+  Stripe: 57c6997c64042a3f5aedae9b76e331942f8b75d2
+  stripe-react-native: ae53a97cc9ab084cc6228f2250da56b0e53da276
+  StripeCore: a6e50d58119a0c7601773b56f274db2d394dcdac
   Yoga: e6ecf3fa25af9d4c87e94ad7d5d292eedef49749
 
 PODFILE CHECKSUM: 44ea6f5d65b965ba88f0e1e3e213a586359add25

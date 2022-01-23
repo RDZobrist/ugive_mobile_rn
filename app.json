@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "rn-starter-1",
-    "slug": "rn-starter-1",
+    "name": "ugive-mobile",
+    "slug": "ugive-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash__.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,14 +18,14 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.rdz480.rnstarter1"
+      "bundleIdentifier": "com.rdz480.ugiveMobile"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/splash__.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.rdz480.rnstarter1"
+      "package": "com.rdz480.ugiveMobile"
     },
     "web": {
       "favicon": "./assets/favicon.png"

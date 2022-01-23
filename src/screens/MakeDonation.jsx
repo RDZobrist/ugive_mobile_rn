@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { render } from 'react-dom';
-import { AntDesign } from '@expo/vector-icons';
-import { Text, StyleSheet, View, TextInput, TouchableOpacity } from 'react-native';
+import { AntDesign, Feather } from '@expo/vector-icons';
+import { Text, Card, Button, Icon } from 'react-native-elements';
+import {  StyleSheet, View, TextInput, Pressable,TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
-import { primaryColor } from '../../constants/colors';
+import { primaryColor, secondaryColor } from '../../constants/colors';
+import Dropdown from '../components/dropdownComponent';
 const MakeDonationScreen = ({ route, navigation }) => {
 
     const [propheticAmount, updatePropheticAmount] = useState(0);
@@ -25,6 +26,7 @@ const MakeDonationScreen = ({ route, navigation }) => {
                             return (
                                 <View style={styles.containerUpperForm}>
                                     <Text style={styles.upperformLabel}>{donationType}</Text>
+                                    <Dropdown />
                                     <TouchableOpacity style={styles.div} onPress={() => updateTitheAmount(titheAmount - 1)}><AntDesign name="minuscircleo" size={30} color={primaryColor} /></TouchableOpacity>
                                     <Text style={styles.span}>{titheAmount}</Text>
                                     <TouchableOpacity style={styles.div} onPress={() => updateTitheAmount(titheAmount + 1)}><AntDesign name="pluscircleo" size={30} color={primaryColor} /></TouchableOpacity>
@@ -36,6 +38,7 @@ const MakeDonationScreen = ({ route, navigation }) => {
                             return (
                                 <View style={styles.containerUpperForm}>
                                     <Text style={styles.upperformLabel}>{donationType}</Text>
+                                    <Dropdown />
                                     <TouchableOpacity style={styles.div} onPress={() => updateMissionAmount(missionAmount - 1)}><AntDesign name="minuscircleo" size={30} color={primaryColor} /></TouchableOpacity>
                                     <Text style={styles.span}>{missionAmount}</Text>
                                     <TouchableOpacity style={styles.div} onPress={() => updateMissionAmount(missionAmount + 1)}><AntDesign name="pluscircleo" size={30} color={primaryColor} /></TouchableOpacity>
@@ -46,6 +49,8 @@ const MakeDonationScreen = ({ route, navigation }) => {
                             return (
                                 <View style={styles.containerUpperForm}>
                                     <Text style={styles.upperformLabel}>{donationType}</Text>
+                                    <Dropdown />
+
                                     <TouchableOpacity style={styles.div} onPress={() => updateSeedAmount(seedAmount - 1)}><AntDesign name="minuscircleo" size={30} color={primaryColor} /></TouchableOpacity>
                                     <Text style={styles.span}>{seedAmount}</Text>
                                     <TouchableOpacity style={styles.div} onPress={() => updateSeedAmount(seedAmount + 1)}><AntDesign name="pluscircleo" size={30} color={primaryColor} /></TouchableOpacity>
@@ -56,6 +61,8 @@ const MakeDonationScreen = ({ route, navigation }) => {
                             return (
                                 <View style={styles.containerUpperForm}>
                                     <Text style={styles.upperformLabel}>{donationType}</Text> 
+                                    <Dropdown />
+
                                      <TouchableOpacity style={styles.div} onPress={() => updateBuildingAmount(buildingAmount - 1)}><AntDesign name="minuscircleo" size={30} color={primaryColor} /></TouchableOpacity>
                                     <Text style={styles.span}>{buildingAmount}</Text>
                                     <TouchableOpacity style={styles.div} onPress={() => updateBuildingAmount(buildingAmount + 1)}><AntDesign name="pluscircleo" size={30} color={primaryColor} /></TouchableOpacity>
@@ -66,6 +73,7 @@ const MakeDonationScreen = ({ route, navigation }) => {
                             return (
                                 <View style={styles.containerUpperForm}>
                                     <Text style={styles.upperformLabel}>{donationType}</Text>                                    
+                                    <Dropdown />
                                     <TouchableOpacity style={styles.div} onPress={() => updateOfferingAmount(offeringAmount - 1)}><AntDesign name="minuscircleo" size={30} color={primaryColor} /></TouchableOpacity>
                                     <Text style={styles.span}>{offeringAmount}</Text>
                                     <TouchableOpacity style={styles.div} onPress={() => updateOfferingAmount(offeringAmount + 1)}><AntDesign name="pluscircleo" size={30} color={primaryColor} /></TouchableOpacity>
@@ -75,7 +83,8 @@ const MakeDonationScreen = ({ route, navigation }) => {
                         case 'prophetic':
                             return (
                                 <View style={styles.containerUpperForm}>
-                                    <Text style={styles.upperformLabel}>{donationType}</Text>                                    
+                                    <Text style={styles.upperformLabel}>{donationType}</Text>   
+                                    <Dropdown />
                                     <TouchableOpacity style={styles.div} onPress={() => updatePropheticAmount(propheticAmount - 1)}><AntDesign name="minuscircleo" size={30} color={primaryColor} /></TouchableOpacity>
                                     <Text style={styles.span}>{propheticAmount}</Text>
                                     <TouchableOpacity style={styles.div} onPress={() => updatePropheticAmount(propheticAmount + 1)}><AntDesign name="pluscircleo" size={30} color={primaryColor} /></TouchableOpacity>
@@ -89,6 +98,19 @@ const MakeDonationScreen = ({ route, navigation }) => {
                 })}
                  <View style={styles.totalContainer}>
                         <Text style={styles.textTotal}>${offeringAmount+missionAmount+buildingAmount+titheAmount+propheticAmount+seedAmount}</Text>
+                        {
+        titheAmount || 
+        seedAmount || 
+        offeringAmount || 
+        buildingAmount || 
+        missionAmount || 
+        propheticAmount ?
+        <Pressable  onPress={()=> navigation.navigate("Finalize DonatioN")}>        
+          <Feather name="arrow-right" size={60} style={styles.arrowIcon} color={secondaryColor} />
+        </Pressable>
+        :
+        null
+      }
                     </View>
             </View>
         </SafeAreaView>
