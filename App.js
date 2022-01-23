@@ -19,6 +19,7 @@ import SendMessageScreen from './src/screens/SendMessageScreen';
 import SendMessageScreen_ from './src/screens/DailyBibleVerseScreen';
 import PaymentScreen from './src/screens/StripePaymentFormScreen';
 import stripeApp from './src/screens/StripeApp';
+import SuccessfulTransactionScreen from './src/screens/SuccessfulTransactionScreen';
 
 import useCachedResources from './helpers/useCachedResources';
 import MakeDonationScreen from './src/screens/MakeDonation';
@@ -111,6 +112,14 @@ export default App = () => {
           <Tab.Screen 
       name="Finalize DonatioN" 
       component={stripeApp}
+      options={{
+        tabBarVisible: false, 
+        tabBarButton: (props) => null, 
+      }} 
+      />
+          <Tab.Screen 
+      name="Successful Transaction" 
+      component={SuccessfulTransactionScreen}
       options={{
         tabBarVisible: false, 
         tabBarButton: (props) => null, 

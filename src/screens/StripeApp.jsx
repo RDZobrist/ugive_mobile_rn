@@ -9,10 +9,11 @@ import {
     useConfirmPayment,
     useStripe,
 } from '@stripe/stripe-react-native';
+import { NavigationRouteContext } from '@react-navigation/native';
 const API_URL = 'http://localhost:4002'
 
 export default StripeApp
-    = () => {
+    = (props) => {
 
         const [cardDetails, setCardDetails] = useState();
         const { confirmPayment, loading } = useConfirmPayment();
@@ -24,13 +25,19 @@ export default StripeApp
                     "Content-Type": "application/json",
 
                 },
+                body: {
+                    paymentMethodType: "card",
+                    currency: "usd"
+                }
             });
             const { clientSecret, error } = await response.json();
-            return { clientSecret, error };
+            console.log(clientSecret)
+            return {clientSecret, error};
         };
 
 
-        const handlePaymentSubmittedPress = async () => {
+        const handlePaymentSubmittedPress = async (props) => {
+            console.log(this.props)
             if (!cardDetails.complete || cardDetails === undefined) {
                return alert( 'Please enter all values to complete this transaction')
             }
@@ -38,7 +45,7 @@ export default StripeApp
                 name: 'sara',
                 email: 'sarah@go.co'
             }
-                try {
+           
                     const { clientSecret, error } = await
                         fetchPaymentIntentClientSecret();
                     if (error) {
@@ -46,11 +53,14 @@ export default StripeApp
                         console.log(error)
                     }
                     else {
+                      
+                            // confirmPayment(clientSecret, {type:"Card"}).then(response=>{console.log('response   ', response)})
+                        
                         const { paymentIntent, error } = await
                             confirmPayment(clientSecret, {
-                                type: "card",
-                                billingDetails
-                            });
+                                type: "Card",
+                                billingDetails: {name: 'sara'}
+                            })
                         
                         if (error) {
                             alert(`Payent Confirmation Error: ${error.message}`)
@@ -58,16 +68,13 @@ export default StripeApp
                     
                         else if (paymentIntent) {
                             alert('Payment Successful :) \n thank you');
-                            console.log('Payment Successful ', paymentIntent)
+                            props.navigation.navigate("   ")
                         }
                     }
                 }
-                 catch (error) {
-                    console.log(error)
-                }
+                 
 
-
-            }
+            
         
         return (
             <View style={styles.container}>

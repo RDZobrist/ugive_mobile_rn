@@ -14,11 +14,10 @@ try {
     amount: 2000, // lowest denomination of given currency to be used for the transaction
     currency: "usd",
     payment_method_types: ["card"]
-    });
-    console.log(res)
-  const clientSecret = paymentIntent.client_secret;
-  console.log('PAYMENT INTENT: ',  paymentIntent)
+    }).then(response => {console.log(response)
+  const clientSecret = response.client_secret;
   res.json({clientSecret})
+    })
 } catch (error) {
   console.log(error.message);
   res.json({error:error.message})
